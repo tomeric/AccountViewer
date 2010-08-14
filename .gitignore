@@ -1,0 +1,5 @@
+build
+.DS_Store
+Eet.nu.xcodeproj/*.mode1v3
+Eet.nu.xcodeproj/*.pbxuser
+Eet.nu.xcodeproj/*.perspectivev3

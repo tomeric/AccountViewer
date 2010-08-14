@@ -1,0 +1,313 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		615A87241216D7FA00714166 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 615A87231216D7FA00714166 /* UIKit.framework */; };
+		615A87261216D7FA00714166 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 615A87251216D7FA00714166 /* Foundation.framework */; };
+		615A87281216D7FA00714166 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 615A87271216D7FA00714166 /* CoreGraphics.framework */; };
+		615A872D1216D7FA00714166 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 615A872B1216D7FA00714166 /* InfoPlist.strings */; };
+		615A872F1216D7FA00714166 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 615A872E1216D7FA00714166 /* main.m */; };
+		615A87321216D7FA00714166 /* AccountViewerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 615A87311216D7FA00714166 /* AccountViewerAppDelegate.m */; };
+		615A87351216D7FA00714166 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 615A87331216D7FA00714166 /* MainWindow.xib */; };
+		615A87381216D7FA00714166 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 615A87371216D7FA00714166 /* MainViewController.m */; };
+		615A873A1216D7FA00714166 /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 615A87391216D7FA00714166 /* MainView.xib */; };
+		615A873D1216D7FA00714166 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 615A873C1216D7FA00714166 /* FlipsideViewController.m */; };
+		615A873F1216D7FA00714166 /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 615A873E1216D7FA00714166 /* FlipsideView.xib */; };
+		615A87491216D84F00714166 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 615A87481216D84F00714166 /* Credentials.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		615A87201216D7FA00714166 /* AccountViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccountViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		615A87231216D7FA00714166 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		615A87251216D7FA00714166 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		615A87271216D7FA00714166 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		615A87291216D7FA00714166 /* AccountViewer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AccountViewer-Info.plist"; sourceTree = "<group>"; };
+		615A872A1216D7FA00714166 /* AccountViewer_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountViewer_Prefix.pch; sourceTree = "<group>"; };
+		615A872C1216D7FA00714166 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		615A872E1216D7FA00714166 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		615A87301216D7FA00714166 /* AccountViewerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountViewerAppDelegate.h; sourceTree = "<group>"; };
+		615A87311216D7FA00714166 /* AccountViewerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountViewerAppDelegate.m; sourceTree = "<group>"; };
+		615A87341216D7FA00714166 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		615A87361216D7FA00714166 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		615A87371216D7FA00714166 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		615A87391216D7FA00714166 /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		615A873B1216D7FA00714166 /* FlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
+		615A873C1216D7FA00714166 /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
+		615A873E1216D7FA00714166 /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
+		615A87471216D84F00714166 /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
+		615A87481216D84F00714166 /* Credentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credentials.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		615A871D1216D7FA00714166 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				615A87241216D7FA00714166 /* UIKit.framework in Frameworks */,
+				615A87261216D7FA00714166 /* Foundation.framework in Frameworks */,
+				615A87281216D7FA00714166 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		615A87111216D7FA00714166 = {
+			isa = PBXGroup;
+			children = (
+				615A87181216D7FA00714166 /* Classes */,
+				615A87191216D7FA00714166 /* Other Sources */,
+				615A871A1216D7FA00714166 /* Resources */,
+				615A871B1216D7FA00714166 /* Frameworks */,
+				615A87211216D7FA00714166 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		615A87181216D7FA00714166 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				615A87461216D83E00714166 /* Models */,
+				615A87451216D83100714166 /* Controllers */,
+				615A87301216D7FA00714166 /* AccountViewerAppDelegate.h */,
+				615A87311216D7FA00714166 /* AccountViewerAppDelegate.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		615A87191216D7FA00714166 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				615A872A1216D7FA00714166 /* AccountViewer_Prefix.pch */,
+				615A872E1216D7FA00714166 /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		615A871A1216D7FA00714166 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				615A87291216D7FA00714166 /* AccountViewer-Info.plist */,
+				615A872B1216D7FA00714166 /* InfoPlist.strings */,
+				615A87331216D7FA00714166 /* MainWindow.xib */,
+				615A87391216D7FA00714166 /* MainView.xib */,
+				615A873E1216D7FA00714166 /* FlipsideView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		615A871B1216D7FA00714166 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				615A87231216D7FA00714166 /* UIKit.framework */,
+				615A87251216D7FA00714166 /* Foundation.framework */,
+				615A87271216D7FA00714166 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		615A87211216D7FA00714166 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				615A87201216D7FA00714166 /* AccountViewer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		615A87451216D83100714166 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				615A87361216D7FA00714166 /* MainViewController.h */,
+				615A87371216D7FA00714166 /* MainViewController.m */,
+				615A873B1216D7FA00714166 /* FlipsideViewController.h */,
+				615A873C1216D7FA00714166 /* FlipsideViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		615A87461216D83E00714166 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				615A87471216D84F00714166 /* Credentials.h */,
+				615A87481216D84F00714166 /* Credentials.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		615A871F1216D7FA00714166 /* AccountViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 615A87421216D7FA00714166 /* Build configuration list for PBXNativeTarget "AccountViewer" */;
+			buildPhases = (
+				615A871C1216D7FA00714166 /* Sources */,
+				615A871D1216D7FA00714166 /* Frameworks */,
+				615A871E1216D7FA00714166 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AccountViewer;
+			productName = AccountViewer;
+			productReference = 615A87201216D7FA00714166 /* AccountViewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		615A87131216D7FA00714166 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 615A87161216D7FA00714166 /* Build configuration list for PBXProject "AccountViewer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 615A87111216D7FA00714166;
+			productRefGroup = 615A87211216D7FA00714166 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				615A871F1216D7FA00714166 /* AccountViewer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		615A871E1216D7FA00714166 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				615A872D1216D7FA00714166 /* InfoPlist.strings in Resources */,
+				615A87351216D7FA00714166 /* MainWindow.xib in Resources */,
+				615A873A1216D7FA00714166 /* MainView.xib in Resources */,
+				615A873F1216D7FA00714166 /* FlipsideView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		615A871C1216D7FA00714166 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				615A872F1216D7FA00714166 /* main.m in Sources */,
+				615A87321216D7FA00714166 /* AccountViewerAppDelegate.m in Sources */,
+				615A87381216D7FA00714166 /* MainViewController.m in Sources */,
+				615A873D1216D7FA00714166 /* FlipsideViewController.m in Sources */,
+				615A87491216D84F00714166 /* Credentials.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		615A872B1216D7FA00714166 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				615A872C1216D7FA00714166 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		615A87331216D7FA00714166 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				615A87341216D7FA00714166 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		615A87401216D7FA00714166 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = Debug;
+		};
+		615A87411216D7FA00714166 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = Release;
+		};
+		615A87431216D7FA00714166 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = AccountViewer_Prefix.pch;
+				INFOPLIST_FILE = "AccountViewer-Info.plist";
+				PRODUCT_NAME = AccountViewer;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		615A87441216D7FA00714166 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = AccountViewer_Prefix.pch;
+				INFOPLIST_FILE = "AccountViewer-Info.plist";
+				PRODUCT_NAME = AccountViewer;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		615A87161216D7FA00714166 /* Build configuration list for PBXProject "AccountViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				615A87401216D7FA00714166 /* Debug */,
+				615A87411216D7FA00714166 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		615A87421216D7FA00714166 /* Build configuration list for PBXNativeTarget "AccountViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				615A87431216D7FA00714166 /* Debug */,
+				615A87441216D7FA00714166 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 615A87131216D7FA00714166 /* Project object */;
+}
