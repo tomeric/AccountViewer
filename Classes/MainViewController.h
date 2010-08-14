@@ -14,6 +14,7 @@
 	Credentials *credentials;
 }
 
+@property (nonatomic, retain) Credentials *credentials;
 
 - (IBAction)showInfo:(id)sender;
 - (void)presentLoginModal;

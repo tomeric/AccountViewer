@@ -11,7 +11,10 @@
 
 @implementation MainViewController
 
+@synthesize credentials;
+
 - (void)viewDidLoad {
+	[super viewDidLoad];
 	credentials = [Credentials load];
 }
 
@@ -59,6 +62,7 @@
 - (void)viewDidUnload {
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
+	[credentials release];
 }
 
 

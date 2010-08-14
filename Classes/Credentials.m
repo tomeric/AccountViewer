@@ -34,6 +34,7 @@
 }
 
 -(void) update {
+	NSLog(@"Updating credentials. username: %@, password: %@", self.username, self.password);
 	NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
 	
 	[settings setValue: self.username forKey: @"username"];

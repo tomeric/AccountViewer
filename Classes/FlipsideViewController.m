@@ -11,20 +11,28 @@
 
 @implementation FlipsideViewController
 
+@synthesize credentials;
 @synthesize delegate;
-
+@synthesize usernameField;
+@synthesize passwordField;
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
 	credentials = [Credentials load];
+	usernameField.text = credentials.username;
+	passwordField.text = credentials.password;
 	
-	self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];      
+	self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];    
 }
 
 
 - (IBAction)done:(id)sender {
+	credentials.username = usernameField.text;
+	credentials.password = passwordField.text;
+	
 	if([credentials valid]) {
+		[credentials update];
 		[self.delegate flipsideViewControllerDidFinish:self];			
 	} else {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Inloggegevens niet correct" 
@@ -47,6 +55,7 @@
 
 
 - (void)viewDidUnload {
+	[credentials release];
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
 }
