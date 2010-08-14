@@ -8,10 +8,9 @@
 
 
 #import "FlipsideViewController.h"
-#import "Credentials.h"
+#import "AuthentionController.h"
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
-	Credentials *credentials;
+@interface MainViewController : AuthentionController <FlipsideViewControllerDelegate> {
 }
 
 @property (nonatomic, retain) Credentials *credentials;

@@ -7,17 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Credentials.h"
+#import "AuthentionController.h"
 
 @protocol FlipsideViewControllerDelegate;
 
 
-@interface FlipsideViewController : UIViewController {
+@interface FlipsideViewController : AuthentionController {
 	id <FlipsideViewControllerDelegate> delegate;
-	Credentials *credentials;
 }
 
-@property (nonatomic, retain) Credentials *credentials;
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
 @property (nonatomic, retain) IBOutlet UITextField *usernameField;
 @property (nonatomic, retain) IBOutlet UITextField *passwordField;

@@ -11,22 +11,22 @@
 
 @implementation MainViewController
 
-@synthesize credentials;
-
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	credentials = [Credentials load];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear: animated];
+	[self attemptLogin];
+}
 
-	if(![credentials valid]) {
-		NSLog(@"Credentials are invalid");
-		[self presentLoginModal];
-	}
-	
-	NSLog(@"Credentials are valid");
+- (void)loginFailed {
+	[self presentLoginModal];
+	[self showLoginError];
+}
+
+- (void)loginCompleted {
+	[super loginCompleted];
 }
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {

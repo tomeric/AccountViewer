@@ -19,6 +19,8 @@
 		615A873D1216D7FA00714166 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 615A873C1216D7FA00714166 /* FlipsideViewController.m */; };
 		615A873F1216D7FA00714166 /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 615A873E1216D7FA00714166 /* FlipsideView.xib */; };
 		615A87491216D84F00714166 /* Credentials.m in Sources */ = {isa = PBXBuildFile; fileRef = 615A87481216D84F00714166 /* Credentials.m */; };
+		617F6A941217401C004F82B7 /* AuthentionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 617F6A931217401C004F82B7 /* AuthentionController.m */; };
+		617F6A9712174032004F82B7 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 617F6A9612174032004F82B7 /* Settings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,10 @@
 		615A873E1216D7FA00714166 /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
 		615A87471216D84F00714166 /* Credentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Credentials.h; sourceTree = "<group>"; };
 		615A87481216D84F00714166 /* Credentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Credentials.m; sourceTree = "<group>"; };
+		617F6A921217401C004F82B7 /* AuthentionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthentionController.h; sourceTree = "<group>"; };
+		617F6A931217401C004F82B7 /* AuthentionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthentionController.m; sourceTree = "<group>"; };
+		617F6A9512174032004F82B7 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		617F6A9612174032004F82B7 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,8 @@
 		615A87191216D7FA00714166 /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				617F6A9512174032004F82B7 /* Settings.h */,
+				617F6A9612174032004F82B7 /* Settings.m */,
 				615A872A1216D7FA00714166 /* AccountViewer_Prefix.pch */,
 				615A872E1216D7FA00714166 /* main.m */,
 			);
@@ -121,6 +129,8 @@
 		615A87451216D83100714166 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				617F6A921217401C004F82B7 /* AuthentionController.h */,
+				617F6A931217401C004F82B7 /* AuthentionController.m */,
 				615A87361216D7FA00714166 /* MainViewController.h */,
 				615A87371216D7FA00714166 /* MainViewController.m */,
 				615A873B1216D7FA00714166 /* FlipsideViewController.h */,
@@ -165,7 +175,6 @@
 			isa = PBXProject;
 			buildConfigurationList = 615A87161216D7FA00714166 /* Build configuration list for PBXProject "AccountViewer" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -204,6 +213,8 @@
 				615A87381216D7FA00714166 /* MainViewController.m in Sources */,
 				615A873D1216D7FA00714166 /* FlipsideViewController.m in Sources */,
 				615A87491216D84F00714166 /* Credentials.m in Sources */,
+				617F6A941217401C004F82B7 /* AuthentionController.m in Sources */,
+				617F6A9712174032004F82B7 /* Settings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
