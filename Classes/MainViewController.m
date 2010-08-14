@@ -11,11 +11,13 @@
 
 @implementation MainViewController
 
+- (void)viewDidLoad {
+	credentials = [Credentials load];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear: animated];
 
-	credentials = [Credentials load];
-	
 	if(![credentials valid]) {
 		NSLog(@"Credentials are invalid");
 		[self presentLoginModal];

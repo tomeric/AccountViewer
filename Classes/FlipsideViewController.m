@@ -16,12 +16,25 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+	
+	credentials = [Credentials load];
+	
 	self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];      
 }
 
 
 - (IBAction)done:(id)sender {
-	[self.delegate flipsideViewControllerDidFinish:self];	
+	if([credentials valid]) {
+		[self.delegate flipsideViewControllerDidFinish:self];			
+	} else {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Inloggegevens niet correct" 
+                                                    message:@"Het is niet gelukt om met de opgegeven gebruikersnaam en wachtwoord in te loggen." 
+                                                   delegate:self 
+                                          cancelButtonTitle:@"Sluiten" 
+                                          otherButtonTitles:nil];
+    
+    [alert show];
+	}
 }
 
 

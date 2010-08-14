@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Credentials.h"
 
 @protocol FlipsideViewControllerDelegate;
 
 
 @interface FlipsideViewController : UIViewController {
 	id <FlipsideViewControllerDelegate> delegate;
+	Credentials *credentials;
 }
 
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
