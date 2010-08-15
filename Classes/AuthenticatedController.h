@@ -13,6 +13,7 @@
 	NSDictionary * accountDictionary;
 }
 
+- (NSDictionary *) getAccountDictionary;
 - (void) presentLoginModal;
 
 @end

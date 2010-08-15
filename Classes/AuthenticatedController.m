@@ -11,6 +11,10 @@
 
 @implementation AuthenticatedController
 
+- (NSDictionary *)getAccountDictionary {
+	return accountDictionary;
+}
+
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear: animated];
 	[self attemptLogin];

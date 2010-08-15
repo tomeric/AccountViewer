@@ -9,9 +9,12 @@
 #import "AuthenticatedController.h"
 
 @interface MainViewController : AuthenticatedController {
+	NSString * title;
 }
 
-@property (nonatomic, retain) Credentials *credentials;
+@property (nonatomic, retain) IBOutlet UILabel *loadingLabel;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *loadingIndicator;
+@property (nonatomic, retain) IBOutlet UILabel *titleLabel;
 
 - (IBAction)showInfo:(id)sender;
 
