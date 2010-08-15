@@ -40,7 +40,6 @@
 	}
 	
 	// Release resources
-	[receivedData release];
 	[parser release];
 	[JSON release];
 }

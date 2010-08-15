@@ -28,6 +28,8 @@
 }
 
 - (void) updateCredentials:(NSString *)username :(NSString *)password {
+	[ASIHTTPRequest clearSession];
+	
 	credentials.username = username;
 	credentials.password = password;
 	
@@ -38,25 +40,19 @@
 	if (![credentials valid]) {
 		[self loginFailed];
 	} else {
-    NSString *URL = [API_URL stringByAppendingFormat: @"account.json#"];
+    NSURL *URL = [NSURL URLWithString:[API_URL stringByAppendingFormat: @"account.json#"]];
 		NSLog(@"Sending request to: %@", URL);
 		
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:URL]
-																													 cachePolicy: NSURLRequestReloadIgnoringLocalCacheData
-																											 timeoutInterval: 20];
-		[request setHTTPShouldHandleCookies:NO];
-		
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-		
-		if (connection) {
-			[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-			receivedData = [[NSMutableData data] retain];
-		} else {
-			[self showConnectionError];
-		}
+		ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:URL];
+
+		[request setDelegate:self];
+		[request setUsername: credentials.username];
+		[request setPassword: credentials.password];		
+		[request startAsynchronous];
 	}
 }
 - (void)handleAuthenticationResponse {
+	NSLog(@"handleAuthenticationResponse");
 	// Parse JSON into an Array
 	SBJSON *parser = [[SBJSON alloc] init];
 	NSString *JSON = [[NSString alloc] initWithData: receivedData
@@ -71,7 +67,6 @@
 	}
 	
 	// Release resources
-	[receivedData release];
 	[parser release];
 	[JSON release];
 }
@@ -110,19 +105,7 @@
 
 // DELEGATES:
 
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-	// Got new response, reset received data
-	[receivedData setLength: 0];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-	// Append the new data to receivedData.
-	[receivedData appendData: data];
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-	[receivedData release];
+- (void)requestFailed:(ASIHTTPRequest *)request {
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 	[self loginFailed];
 }
@@ -142,11 +125,12 @@
 	}
 }
 
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+- (void)requestFinished:(ASIHTTPRequest *)request {
 	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-	[self handleAuthenticationResponse];
+	NSLog(@"requestFinished");
 	
-	[connection release];
+	receivedData = [request responseData];
+	[self handleAuthenticationResponse];
 }
 
 

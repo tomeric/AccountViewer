@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "Credentials.h"
 #import "Settings.h"
+#import "ASIHTTPRequest.h"
 #import "JSON.h"
 
 @interface AuthenticationController : UIViewController {
 	Credentials * credentials;
-	NSMutableData * receivedData;
+	NSData * receivedData;
 }
 
 @property (nonatomic, retain) Credentials *credentials;
