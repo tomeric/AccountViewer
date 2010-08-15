@@ -11,72 +11,8 @@
 
 @implementation MainViewController
 
-- (void)viewDidLoad {
-	[super viewDidLoad];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-	[super viewDidAppear: animated];
-	[self attemptLogin];
-}
-
-- (void)loginFailed {
-	[self presentLoginModal];
-	[self showLoginError];
-}
-
-- (void)loginCompleted {
-	[super loginCompleted];
-}
-
-- (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
-	[self dismissModalViewControllerAnimated:YES];
-}
-
-
 - (IBAction)showInfo:(id)sender {    
 	[self presentLoginModal];
-}
-
-- (void) presentLoginModal {
-	FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideView" bundle:nil];
-	
-	controller.delegate = self;
-	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-	
-	NSLog(@"Presenting the flipside");
-	[self presentModalViewController:controller animated:YES];
-	
-	[controller release];	
-}
-
-
-- (void)didReceiveMemoryWarning {
-	// Releases the view if it doesn't have a superview.
-	[super didReceiveMemoryWarning];
-	
-	// Release any cached data, images, etc. that aren't in use.
-}
-
-
-- (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
-	[credentials release];
-}
-
-
-/*
- // Override to allow orientations other than the default portrait orientation.
- - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
- // Return YES for supported orientations.
- return (interfaceOrientation == UIInterfaceOrientationPortrait);
- }
- */
-
-- (void)dealloc {
-	
-	[super dealloc];
 }
 
 @end

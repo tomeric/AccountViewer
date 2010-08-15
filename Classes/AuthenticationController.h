@@ -11,7 +11,7 @@
 #import "Settings.h"
 #import "JSON.h"
 
-@interface AuthentionController : UIViewController {
+@interface AuthenticationController : UIViewController {
 	Credentials * credentials;
 	NSMutableData * receivedData;
 	BOOL useCredentialStorage;

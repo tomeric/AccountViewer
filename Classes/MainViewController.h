@@ -6,17 +6,14 @@
 //  Copyright (c) 2010 __MyCompanyName__. All rights reserved.
 //
 
+#import "AuthenticatedController.h"
 
-#import "FlipsideViewController.h"
-#import "AuthentionController.h"
-
-@interface MainViewController : AuthentionController <FlipsideViewControllerDelegate> {
+@interface MainViewController : AuthenticatedController {
 }
 
 @property (nonatomic, retain) Credentials *credentials;
 
 - (IBAction)showInfo:(id)sender;
-- (void)presentLoginModal;
 
 @end
 

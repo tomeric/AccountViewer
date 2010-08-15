@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AuthentionController.h"
+#import "AuthenticationController.h"
 
 @protocol FlipsideViewControllerDelegate;
 
 
-@interface FlipsideViewController : AuthentionController {
+@interface FlipsideViewController : AuthenticationController {
 	id <FlipsideViewControllerDelegate> delegate;
 }
 

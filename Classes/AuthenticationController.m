@@ -6,9 +6,9 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "AuthentionController.h"
+#import "AuthenticationController.h"
 
-@implementation AuthentionController
+@implementation AuthenticationController
 
 @synthesize credentials;
 
