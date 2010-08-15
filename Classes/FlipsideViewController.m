@@ -25,7 +25,7 @@
 }
 
 - (IBAction)done:(id)sender {
-	[self updateCredentials:usernameField.text:passwordField.text];
+	[self updateCredentials: usernameField.text: passwordField.text];
 	[self attemptLogin];
 }
 
