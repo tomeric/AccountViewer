@@ -23,8 +23,6 @@
 		6161396F121893E1009C3851 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6161396E121893E1009C3851 /* SystemConfiguration.framework */; };
 		61613973121893EC009C3851 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61613972121893EC009C3851 /* MobileCoreServices.framework */; };
 		61613977121893F4009C3851 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61613976121893F4009C3851 /* CoreGraphics.framework */; };
-		616139C6121899D4009C3851 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 616139C5121899D4009C3851 /* Settings.m */; };
-		616139EB12189A17009C3851 /* AccountViewerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 616139C912189A17009C3851 /* AccountViewerAppDelegate.m */; };
 		616139EC12189A17009C3851 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 616139CB12189A17009C3851 /* ASIAuthenticationDialog.m */; };
 		616139ED12189A17009C3851 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 616139CE12189A17009C3851 /* ASIDownloadCache.m */; };
 		616139EE12189A17009C3851 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 616139D012189A17009C3851 /* ASIFormDataRequest.m */; };
@@ -38,6 +36,7 @@
 		616139F612189A17009C3851 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 616139E612189A17009C3851 /* SBJsonBase.m */; };
 		616139F712189A17009C3851 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 616139E812189A17009C3851 /* SBJsonParser.m */; };
 		616139F812189A17009C3851 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 616139EA12189A17009C3851 /* SBJsonWriter.m */; };
+		61613A0912189A94009C3851 /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 61613A0812189A94009C3851 /* Settings.m */; };
 		617F6A941217401C004F82B7 /* AuthenticationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 617F6A931217401C004F82B7 /* AuthenticationController.m */; };
 		617F6B531218039A004F82B7 /* AuthenticatedController.m in Sources */ = {isa = PBXBuildFile; fileRef = 617F6B521218039A004F82B7 /* AuthenticatedController.m */; };
 /* End PBXBuildFile section */
@@ -66,10 +65,6 @@
 		6161396E121893E1009C3851 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		61613972121893EC009C3851 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		61613976121893F4009C3851 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		616139C4121899D4009C3851 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Settings.h; path = Classes/Settings.h; sourceTree = "<group>"; };
-		616139C5121899D4009C3851 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Settings.m; path = Classes/Settings.m; sourceTree = "<group>"; };
-		616139C812189A17009C3851 /* AccountViewerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewerAppDelegate.h; sourceTree = "<group>"; };
-		616139C912189A17009C3851 /* AccountViewerAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewerAppDelegate.m; sourceTree = "<group>"; };
 		616139CA12189A17009C3851 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		616139CB12189A17009C3851 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		616139CC12189A17009C3851 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASICacheDelegate.h; sourceTree = "<group>"; };
@@ -101,6 +96,8 @@
 		616139E812189A17009C3851 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
 		616139E912189A17009C3851 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		616139EA12189A17009C3851 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		61613A0712189A94009C3851 /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
+		61613A0812189A94009C3851 /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		617F6A921217401C004F82B7 /* AuthenticationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationController.h; sourceTree = "<group>"; };
 		617F6A931217401C004F82B7 /* AuthenticationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationController.m; sourceTree = "<group>"; };
 		617F6B511218039A004F82B7 /* AuthenticatedController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticatedController.h; sourceTree = "<group>"; };
@@ -151,8 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				617F6B161217FDA3004F82B7 /* Libraries */,
-				616139C4121899D4009C3851 /* Settings.h */,
-				616139C5121899D4009C3851 /* Settings.m */,
+				61613A0712189A94009C3851 /* Settings.h */,
+				61613A0812189A94009C3851 /* Settings.m */,
 				615A872A1216D7FA00714166 /* AccountViewer_Prefix.pch */,
 				615A872E1216D7FA00714166 /* main.m */,
 			);
@@ -220,8 +217,6 @@
 		616139C712189A17009C3851 /* ASIHTTP */ = {
 			isa = PBXGroup;
 			children = (
-				616139C812189A17009C3851 /* AccountViewerAppDelegate.h */,
-				616139C912189A17009C3851 /* AccountViewerAppDelegate.m */,
 				616139CA12189A17009C3851 /* ASIAuthenticationDialog.h */,
 				616139CB12189A17009C3851 /* ASIAuthenticationDialog.m */,
 				616139CC12189A17009C3851 /* ASICacheDelegate.h */,
@@ -350,8 +345,6 @@
 				615A87491216D84F00714166 /* Credentials.m in Sources */,
 				617F6A941217401C004F82B7 /* AuthenticationController.m in Sources */,
 				617F6B531218039A004F82B7 /* AuthenticatedController.m in Sources */,
-				616139C6121899D4009C3851 /* Settings.m in Sources */,
-				616139EB12189A17009C3851 /* AccountViewerAppDelegate.m in Sources */,
 				616139EC12189A17009C3851 /* ASIAuthenticationDialog.m in Sources */,
 				616139ED12189A17009C3851 /* ASIDownloadCache.m in Sources */,
 				616139EE12189A17009C3851 /* ASIFormDataRequest.m in Sources */,
@@ -365,6 +358,7 @@
 				616139F612189A17009C3851 /* SBJsonBase.m in Sources */,
 				616139F712189A17009C3851 /* SBJsonParser.m in Sources */,
 				616139F812189A17009C3851 /* SBJsonWriter.m in Sources */,
+				61613A0912189A94009C3851 /* Settings.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
