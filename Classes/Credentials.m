@@ -17,7 +17,7 @@
 +(id) load {
 	Credentials *credentials = [[Credentials alloc] init];
 	NSUserDefaults *settings = [NSUserDefaults standardUserDefaults];
-		
+	
 	credentials.username = [settings stringForKey:@"username"];
 	credentials.password = [settings stringForKey:@"password"];
 	

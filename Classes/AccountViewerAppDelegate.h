@@ -12,9 +12,9 @@
 @class MainViewController;
 
 @interface AccountViewerAppDelegate : NSObject <UIApplicationDelegate> {
-
+	
 	UIWindow *window;
-
+	
 	MainViewController *mainViewController;
 }
 

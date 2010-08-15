@@ -30,7 +30,7 @@
 - (void) updateCredentials:(NSString *)username :(NSString *)password {
 	credentials.username = username;
 	credentials.password = password;
-
+	
 	[credentials update];
 }
 
@@ -92,7 +92,7 @@
 																								 delegate: self
 																				cancelButtonTitle: @"Sluiten"
 																				otherButtonTitles: nil];
-
+	
 	[alert show];
 	[alert release];
 }
