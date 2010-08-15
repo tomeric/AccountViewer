@@ -14,28 +14,46 @@
 @synthesize loadingLabel, loadingIndicator;
 @synthesize titleLabel;
 
-- (IBAction)showInfo:(id)sender {    
-	[self presentLoginModal];
-}
+// PUBLIC:
 
-- (void)viewDidLoad {
-	loadingLabel.hidden = NO;
-	loadingIndicator.hidden = NO;
-	titleLabel.hidden = YES;
-	
-	[super viewDidLoad];
+- (void)attemptLogin {
+	[self startLoading];
+	[super attemptLogin];
 }
 
 - (void)loginCompleted {
 	NSDictionary *accountDictionary = [self getAccountDictionary];
 	
-	loadingLabel.hidden = YES;
-	loadingIndicator.hidden = YES;
-	
 	titleLabel.text = [accountDictionary objectForKey:@"name"];
-	titleLabel.hidden = NO;
+	[self finishedLoading];
 	
 	[super loginCompleted];
+}
+
+// DELEGATES:
+
+- (IBAction)showInfo:(id)sender {    
+	[self presentLoginModal];
+}
+
+- (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
+	[self startLoading];
+	[super flipsideViewControllerDidFinish:controller];
+}
+
+
+// PRIVATE:
+
+- (void)startLoading {
+	loadingLabel.hidden = NO;
+	loadingIndicator.hidden = NO;
+	titleLabel.hidden = YES;	
+}
+
+- (void)finishedLoading {
+	loadingLabel.hidden = YES;
+	loadingIndicator.hidden = YES;
+	titleLabel.hidden = NO;
 }
 
 @end

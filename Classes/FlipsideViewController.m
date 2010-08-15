@@ -15,6 +15,8 @@
 @synthesize usernameField;
 @synthesize passwordField;
 
+// PUBLIC:
+
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
@@ -24,17 +26,19 @@
 	self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];    
 }
 
-- (IBAction)done:(id)sender {
-	[self updateCredentials: usernameField.text: passwordField.text];
-	[self attemptLogin];
-}
-
 - (void)loginCompleted {
 	[self.delegate flipsideViewControllerDidFinish:self];
 }
 
 - (void)loginFailed {
 	[self showLoginError];
+}
+
+// DELEGATES:
+
+- (IBAction)done:(id)sender {
+	[self updateCredentials: usernameField.text: passwordField.text];
+	[self attemptLogin];
 }
 
 @end

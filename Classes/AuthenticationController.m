@@ -12,6 +12,17 @@
 
 @synthesize credentials;
 
+// PUBLIC:
+
+- (void)viewDidLoad {
+	[super viewDidLoad];
+	credentials = [Credentials load];	
+}
+
+- (void)viewDidUnload {
+	[credentials release];
+}
+
 - (id) getCredentials {
 	return self.credentials;
 }
@@ -23,30 +34,17 @@
 	[credentials update];
 }
 
-- (void)viewDidLoad {
-	[super viewDidLoad];
-	useCredentialStorage = YES;
-	credentials = [Credentials load];	
-}
-
-- (void)viewDidUnload {
-	[credentials release];
-}
-
 - (void)attemptLogin {
 	if (![credentials valid]) {
 		[self loginFailed];
 	} else {
-		[self resetAuthentication];
-		useCredentialStorage = NO;
-
     NSString *URL = [API_URL stringByAppendingFormat: @"account.json#"];
 		NSLog(@"Sending request to: %@", URL);
 		
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString:URL]
 																													 cachePolicy: NSURLRequestReloadIgnoringLocalCacheData
 																											 timeoutInterval: 20];
-    
+		[request setHTTPShouldHandleCookies:NO];
 		
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
 		
@@ -58,72 +56,6 @@
 		}
 	}
 }
-
-- (void)resetAuthentication {
-	// reset the credentials cache...
-	NSLog(@"Resetting Authentication");
-	NSDictionary *credentialsDict = [[NSURLCredentialStorage sharedCredentialStorage] allCredentials];
-	
-	if ([credentialsDict count] > 0) {
-		// the credentialsDict has NSURLProtectionSpace objs as keys and dicts of userName => NSURLCredential
-		NSEnumerator *protectionSpaceEnumerator = [credentialsDict keyEnumerator];
-		id urlProtectionSpace;
-		
-		// iterate over all NSURLProtectionSpaces
-		while (urlProtectionSpace = [protectionSpaceEnumerator nextObject]) {
-			NSEnumerator *userNameEnumerator = [[credentialsDict objectForKey:urlProtectionSpace] keyEnumerator];
-			id userName;
-			
-			// iterate over all usernames for this protectionspace, which are the keys for the actual NSURLCredentials
-			while (userName = [userNameEnumerator nextObject]) {
-				NSURLCredential *cred = [[credentialsDict objectForKey:urlProtectionSpace] objectForKey:userName];
-				NSLog(@"Removing credential for: %@", cred);
-				[[NSURLCredentialStorage sharedCredentialStorage] removeCredential:cred forProtectionSpace:urlProtectionSpace];
-			}
-		}
-	}	
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-	// Got new response, reset received data
-	[receivedData setLength: 0];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-	// Append the new data to receivedData.
-	[receivedData appendData: data];
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-	[receivedData release];
-	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-	[self loginFailed];
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
-	NSLog(@"Received authentication challenge");
-
-	if ([challenge previousFailureCount] == 0) {
-		NSLog(@"Logging in with username: %@, password: %@", credentials.username, credentials.password);
-		
-		[[challenge sender]  useCredential: [NSURLCredential credentialWithUser: credentials.username
-																																	 password: credentials.password
-																															  persistence: NSURLCredentialPersistenceNone] 
-						forAuthenticationChallenge: challenge];
-
-		useCredentialStorage = YES;
-	} else {
-		[[challenge sender] cancelAuthenticationChallenge: challenge];
-	}
-}
-
-- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-	[self handleAuthenticationResponse];
-	
-	[connection release];
-}
-
 - (void)handleAuthenticationResponse {
 	// Parse JSON into an Array
 	SBJSON *parser = [[SBJSON alloc] init];
@@ -175,5 +107,47 @@
 	[alert show];	
 	[alert release];
 }
+
+// DELEGATES:
+
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+	// Got new response, reset received data
+	[receivedData setLength: 0];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+	// Append the new data to receivedData.
+	[receivedData appendData: data];
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+	[receivedData release];
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+	[self loginFailed];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+	NSLog(@"Received authentication challenge");
+	
+	if ([challenge previousFailureCount] == 0) {
+		NSLog(@"Logging in with username: %@, password: %@", credentials.username, credentials.password);
+		
+		[[challenge sender]  useCredential: [NSURLCredential credentialWithUser: credentials.username
+																																	 password: credentials.password
+																															  persistence: NSURLCredentialPersistenceNone] 
+						forAuthenticationChallenge: challenge];
+	} else {
+		[[challenge sender] cancelAuthenticationChallenge: challenge];
+	}
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection {
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+	[self handleAuthenticationResponse];
+	
+	[connection release];
+}
+
 
 @end
